@@ -1,27 +1,25 @@
 {
-  "name": "spicyo",
-  "version": "1.0.0",
+  "name": "spicyo copyright",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "dependencies": {
     "http-server": "^14.1.0",
+    "run-script-os": "^1.1.6",
     "superagent": "^8.0.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.23.1"
   },
   "scripts": {
-    "dev": "./node_modules/http-server/bin/http-server",
-    "test": "PLAYWRIGHT_JSON_OUTPUT_NAME=.devmatch/out/results.json npx playwright test  --reporter=dot --reporter=json "
+    "dev": "run-script-os",
+    "dev:darwin:linux": "./node_modules/http-server/bin/http-server",
+    "dev:win32": "node node_modules\\http-server\\bin\\http-server",
+    "test": "run-script-os",
+    "test:darwin:linux": "PLAYWRIGHT_JSON_OUTPUT_NAME=.devmatch/out/results.json npx playwright test  --reporter=dot --reporter=json ",
+    "test:win32": "SET PLAYWRIGHT_JSON_OUTPUT_NAME=.devmatch/out/results.json && npx playwright test  --reporter=dot --reporter=json "
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DUBvelopers-UW/spicyo.git"
-  },
-  "author": "",
+  "author": "DevMatch",
   "license": "",
-  "bugs": {
-    "url": "https://github.com/DUBvelopers-UW/spicyo/issues"
-  },
-  "homepage": "https://github.com/DUBvelopers-UW/spicyo#readme"
+  "homepage": "https://devmatch.io/"
 }
