@@ -1,9 +1,13 @@
 name: Playwright Tests
 on:
-   push:
+  # Trigger when main is updated
+  push:
     branches: [ main ]
-   pull_request:
+  # Trigger on new pull requests
+  pull_request:
     branches: [ main ]
+  # Ability to manually trigger workflows
+  workflow_dispatch:
 
 jobs:
   test:
